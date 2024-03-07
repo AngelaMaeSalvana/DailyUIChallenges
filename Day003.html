@@ -1,0 +1,212 @@
+<!--
+Prompt: Landing Page
+
+What's the main focus? 
+Is it for a book, an album, 
+a mobile app, a SaaS product? 
+Consider important landing page 
+elements (Headlines, call-to-action
+ buttons, typography, clarity, etc.)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0%;  
+        } 
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body{
+            background-color: #000000;
+            color:  white;
+        }
+        .container{
+            width: 99.8vw;
+        }
+        .navigation{ 
+            padding: 5px;
+            height: 50px; 
+            position: sticky;
+            display: flex;
+            align-items: center;
+            justify-content: space-around; 
+        }
+        .navigation .logo {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            gap: 5px;
+            font-family: "IBM Plex Sans Thai Looped", sans-serif;
+            font-size: 20pt;
+
+        }
+        .navigation .links{
+            width: 45%; 
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        } 
+        .navigation .links > a{
+            font-family: "Poppins", sans-serif;
+            color: white; 
+            text-decoration: none;
+        }
+        .hero{
+            height: 575px; 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 60% 25%;
+        }
+        .hero .header{ 
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start:1 ;
+            grid-row-end: 2;
+            font-family: "Poppins", sans-serif;
+            padding-left : 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .hero .header h1{
+            font-family: "IBM Plex Sans Thai Looped", sans-serif;
+            color: rgb(243, 158, 61);
+        }
+        .hero .feature-photo{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start:1 ;
+            grid-row-end: 2;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero svg{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start:2 ;
+            grid-row-end: 3;
+        } 
+        .programs{
+            margin-top: 40px;
+            height: 575px;
+            background-color: rgb(243,107,61);
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 30px 1fr;
+        }
+        .programs h3{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .programs .one{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .programs .group{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .programs .one{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .programs .prog{
+            width: 80%;
+            height: 450px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            background-color: #000000;
+            border-radius: 30px;
+        }
+        .programs .prog img{
+            width: 90%;
+            height: 45%;
+            object-fit: cover;
+        }
+        .programs .prog p{
+            width: 90%;
+            height: 45%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="logo">
+                <i class='bx bxs-meteor'></i>
+                <h3>Fit Pro</h3>
+            </div>
+            <div class="links">
+                <a href="">Programs</a>
+                <a href="">Success Stories</a>
+                <a href="">Get Started</a>
+            </div> 
+        </div>
+
+        <div class="hero">
+            <div class="header">
+                <h1>Transform Your Body and Life with your Personalized Online Fitness Coach</h1>
+                <p>Unlock Your Potential, Crush Your Goals, and Build a Stronger, Healthier You</p>
+            </div>
+            <div class="feature-photo">
+                <img src="./img/d3-2.png" alt="">
+            </div>
+            <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 290" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(243, 106, 62, 1)" offset="0%"></stop><stop stop-color="rgba(255, 179, 11, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,116L21.8,130.5C43.6,145,87,174,131,188.5C174.5,203,218,203,262,193.3C305.5,184,349,164,393,145C436.4,126,480,106,524,82.2C567.3,58,611,29,655,53.2C698.2,77,742,155,785,169.2C829.1,184,873,135,916,140.2C960,145,1004,203,1047,207.8C1090.9,213,1135,164,1178,130.5C1221.8,97,1265,77,1309,62.8C1352.7,48,1396,39,1440,33.8C1483.6,29,1527,29,1571,33.8C1614.5,39,1658,48,1702,77.3C1745.5,106,1789,155,1833,145C1876.4,135,1920,68,1964,53.2C2007.3,39,2051,77,2095,101.5C2138.2,126,2182,135,2225,135.3C2269.1,135,2313,126,2356,111.2C2400,97,2444,77,2487,62.8C2530.9,48,2575,39,2618,62.8C2661.8,87,2705,145,2749,154.7C2792.7,164,2836,126,2880,96.7C2923.6,68,2967,48,3011,58C3054.5,68,3098,106,3120,125.7L3141.8,145L3141.8,290L3120,290C3098.2,290,3055,290,3011,290C2967.3,290,2924,290,2880,290C2836.4,290,2793,290,2749,290C2705.5,290,2662,290,2618,290C2574.5,290,2531,290,2487,290C2443.6,290,2400,290,2356,290C2312.7,290,2269,290,2225,290C2181.8,290,2138,290,2095,290C2050.9,290,2007,290,1964,290C1920,290,1876,290,1833,290C1789.1,290,1745,290,1702,290C1658.2,290,1615,290,1571,290C1527.3,290,1484,290,1440,290C1396.4,290,1353,290,1309,290C1265.5,290,1222,290,1178,290C1134.5,290,1091,290,1047,290C1003.6,290,960,290,916,290C872.7,290,829,290,785,290C741.8,290,698,290,655,290C610.9,290,567,290,524,290C480,290,436,290,393,290C349.1,290,305,290,262,290C218.2,290,175,290,131,290C87.3,290,44,290,22,290L0,290Z"></path></svg>
+        </div>
+
+        <div class="programs">
+            <h3 style="justify-self: left; padding-left:40px; font-family: 'Poppins'; font-size: 20pt; color: #000000;">Choose your Program</h3>
+             <div class="prog one">
+                <img src="./img/d3-4.jpeg" alt="">
+                <p></p>
+            </div> 
+            <div class="prog group">
+                <img src="./img/d3-3.jpeg" alt="">
+                <p></p>
+            </div> 
+            <div class="prog special">
+                <img src="./img/d3-7.jpeg" alt="">
+                <p></p>
+            </div> 
+        </div>
+
+        <div class="success-stories">
+
+        </div>
+
+        <div class="get-started">
+
+        </div>
+    </div>
+    
+</body>
+</html>

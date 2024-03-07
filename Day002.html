@@ -1,0 +1,310 @@
+<!-- 
+Prompt: Credit Card Checkout
+
+Design a credit card checkout form
+or page. Don't forget the important
+elements such as the numbers, dates,
+security numbers, etc.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            font-family: "Outfit", sans-serif;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(228, 0, 0);
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        .container{
+            width: 80%;
+            height: 90%;
+            background-color: white;
+            box-shadow:    8px 8px 16px #c20000,
+             -8px -8px 16px #ff0000;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; 
+            justify-content: center;
+            align-items: center; 
+            align-content: center;
+        }
+        .summary-box{
+            width: 50%;
+            height: 100%; 
+            display: flex;
+            flex-direction: column;  
+        }
+        .summary-box > .item{
+            margin: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+
+        }
+        .container> .summary-box > .item > img {
+            width: 90px;
+            height: 90px; 
+            object-fit: cover;
+            border-radius: 50%;
+            border: 0.5px solid rgba(22, 22, 22, 0.459) ;
+        }
+
+        .payment-box{
+            width: 43%;
+            height:85%;
+            background-color: rgb(242,237,234);
+            box-shadow: 8px 8px 14px #d9d4d3,
+                        -8px -8px 14px #ffffff; 
+            padding: 7px; 
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .method-box{
+            width: 95%;
+            height: 33%; 
+            display: flex;
+            flex-direction: column;
+            align-content: center; 
+            gap: 3px;
+        }
+        .method-box > div > img{
+            height: 50px;
+            width: 444px;
+            object-fit: contain; 
+        }
+        .method-box > div {
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5px;
+        }  
+        .active{
+            height: 50px;
+            width: 444px;
+            object-fit: contain;
+            background-color: white; 
+            border-radius: 6px;
+        }
+        .paydetails-box{
+            width: 95%;
+            height: 65%; 
+
+        }
+        .visa > form{
+            padding: 10px;
+            gap: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        } 
+        .visa > form > .holder > input{
+            width: 409px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .num{
+            height:70px; 
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr ;
+            gap: 2px;
+        }
+        .num label{
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1 ;
+            grid-row-end: 2 ;
+        }
+        .visa > form > .num > input{
+            width: 80px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px; 
+        }
+        
+        .num .first{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2 ;
+            grid-row-end: 3 ;
+        }
+        .num .second{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2 ;
+            grid-row-end: 3 ;
+        }
+        .num .third{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2 ;
+            grid-row-end: 3 ;
+        }
+        .num .last{
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2 ;
+            grid-row-end: 3 ;
+        }
+        .additional{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 1fr ;
+            gap: 2px;
+        }
+        .visa .additional input{
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .paypal{
+            display: none;
+        }
+        .shop{ 
+            position: absolute;  
+            bottom: 40px;
+            right: 20px;
+            color: #9c0606;
+            line-height: 23px;
+        }
+        .back-btn{
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            font-size: 19pt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow:  8px 8px 16px #c20000,
+                        -8px -8px 16px #ff0000;
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="back-btn">
+        <p> < </p>
+    </div>
+    
+
+   <div class="container">
+        
+        <div class="summary-box">
+            <br>
+            <h2>Order Summary</h2> 
+            <div class="item">
+                <img src="https://www.tastingtable.com/img/gallery/what-makes-restaurant-burgers-taste-different-from-homemade-burgers-upgrade/intro-1662064407.jpg" alt="burger">
+                <p><strong> Thriple Cheese Burger Set</strong> x 1 <br> Php 150.00 </p>
+
+            </div>
+            <div class="item">
+                <img src="https://images.themodernproper.com/billowy-turkey/production/posts/2022/Homemade-French-Fries_8.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1662474181&s=f6b09b96f732330eca2aae43140b3ffa" alt="fries">
+                <p><strong>Large Fries</strong> x 3 <br> Php 297.00</p>
+            </div>
+            <div class="item">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*" alt="pizza">
+                <p><strong>Family Size Pizza</strong> x 1 <br> Php 369.00 </p>
+            </div>
+            <div class="item">
+                <img src="https://www.kroger.com/product/images/large/front/0004900005341" alt="coca-cola">
+                <p><strong>Coca-Cola 16oz</strong> x 3<br>Php 90.00 </p>
+            </div>
+            <br><hr><br>
+            <h3>Total:</h3>
+            <h2>Php 906.00</h2>
+
+            
+        </div>
+
+        <div class="payment-box">
+            <div class="method-box"> 
+                <h2>Mode of Payment</h2>
+                <p>Choose your secure payment method</p> 
+                <div class="visa-box active" onclick=" ">
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/visa-1-logo-png-transparent.png" alt="">
+                </div>  
+                <div class="paypal-box" onclick=" ">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/07/PayPal-Logo.png" alt="">
+                </div> 
+            </div>
+            <div class="paydetails-box">
+                <div class="visa ">
+                    <form action="" method="post">
+                        <div class="holder">
+                            <label for="card-holder">Name on Card</label><br>
+                            <input type="text" name="card-holder"><br>
+                        </div>
+                        
+                        <div class="num">
+                            <label for="card-number">Card Number</label><br>
+                            <input class="first" type="text" name="card-number" placeholder="0000"> <br>
+                            <input class="second"type="text" name="card-number" placeholder="0000"> <br>
+                            <input class="third"type="text" name="card-number" placeholder="0000"> <br>
+                            <input class="last"type="text" name="card-number" placeholder="0000"> <br>
+                            
+                        </div>
+                        <div class="additional">
+                            <label for="expiry">Expire Date</label><br>
+                            <input type="date" name="expiry" > <br>
+                            <label for="cvv">CVV</label><br>
+                            <input type="text" name="cvv" > 
+                            <p style="font-size: 8pt; color: rgba(122, 122, 122, 0.904);">*CVV or CVC is the card security code, unique three-digits number on the back of your card separate from its number.</p> 
+                        </div><br>
+                        <input type="submit" value="Pay Now" style="padding: 3px;">
+                    </form>
+                </div>
+                <div class="paypal"><h1>Paypal</h1></div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="shop">
+        <h4 style="font-family: 'Cookie' ,cursive;
+                   font-size: 34pt;">Chikoy's</h4> 
+        <h5 style="font-size: 13pt;">foodies</h5>
+    </div> 
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+<!--VALUES (1111, 'Angela Mae', 'S', 'Salvana', '09166890536', 'salvanaangelamae@gmail.com', 'Katipunan, Villanueva'), (1112, 'Decemay', 'A', 'Paradillo', '09123456789', 'user@gmail.com', 'USTP'), (1113, 'Mardie', 'A', 'Mangcobihon', '09123456789', 'mardie@email.cpm', 'USTP'), (1114, 'Merie Mae', '', 'Pacana', '097462826481', 'jsdhwu@jahsjgqu.cpm', 'USTP'), (1115, 'Allyna Wayne', 'A', 'Balaso', '09276608553', '', 'Poblacion 2, Villanueva'), (1116, 'Alean Venice', 'M', 'Closa', '09163354216', '', 'Poblacion 3, Villanueva'), (1117, 'Jhulian', 'H', 'Sujetado', '09531475180', '', 'Villanueva'), (1118, 'Jessa Mae', 'S', 'Abaco', '09675239015', '', 'Purok 3B, Poblacion 2, Villanueva'), (1119, 'Sean Angelo', 'S', 'Florendo', '0965958732', '', 'Famex, Purok 3B, Poblacion 2, Villanueva')-->
+    

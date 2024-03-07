@@ -1,0 +1,312 @@
+<!--
+Prompt: Sign Up
+
+Create a sign up page, modal, form, or
+app screen related to signing up for 
+something. It could be for a volunteer 
+event, contest registration, a giveaway, 
+or anything you can image.
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0%;
+        }
+        body{ 
+            width: 100vw;
+            height: 100%;
+            font-family: "Inter Tight", sans-serif;
+            font-optical-sizing: auto; 
+            font-style: normal; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        } 
+        .container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;   
+        }
+        .cover{  
+            width: 1330px;
+            height:570px;
+            border-radius: 10px;  
+            background-image: url('./img/d1-3.png');
+            background-repeat: no-repeat; 
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        h1{
+            font-weight: 900;
+            font-size: 35pt;
+            text-shadow: 2px 2px #474747;
+        }
+        .desc{
+            width: 700px; 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: center;
+            text-shadow: 2px 2px #474747;
+        }
+        .desc > div{ 
+            font-size: larger;
+            display: flex;
+            width: 300px;  
+        }
+        .desc > div > i,
+        .nav-bar > div > i{
+            font-size: 20pt;
+            margin: 0px 5px;
+        }
+        .nav-bar{
+            width: 90%;
+            height: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .links{ 
+            width: 400px;
+            display: flex;  
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .links > a { 
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        .links > a:hover {
+            text-decoration: underline;
+        }
+        a.reg-btn{  
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.747); 
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .about{
+            height: 500px;
+            display: grid;
+            grid-template-columns:1fr 1fr ;
+            grid-template-rows: 1fr ;
+            padding: 17px;
+        }
+        .mySlides > img{
+            width: 700px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .para{  
+            padding: 30px;
+            font-size: larger;
+            display: flex ; 
+            align-items: center;  
+        }
+        .para > p > span{ 
+            color: rgb(0, 199, 0);
+            font-weight: 800;
+        } 
+        .signup{
+            width: 1330px;
+            height:600px; 
+            background-image: url(./img/d1-6.png );
+            border-radius: 10px;
+            margin: 10px;
+            justify-self: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            align-content: center; 
+        }
+        .signup .form-container {
+            width: 40%;
+            height: 80%;
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 12px;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+            display: flex; 
+            flex-direction: column;
+            justify-content: center ;
+            align-items: center; 
+        }
+        .form-container >form{ 
+            width: 90%;
+            height: 80%;
+            margin: 5px;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            align-content: space-evenly;
+            
+        }
+        .form-container > form > div >input,
+        .form-container > form > div >select{
+            margin-left: 5px;
+            width: auto; 
+            height: 25px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body> 
+    <div class="nav-bar">
+        <div class="logo">
+            <i class='bx bxl-spring-boot'></i>
+        </div>
+        <div class="links">
+            <a href="#cover">Event</a>
+            <a href="#about">About</a>
+            <a href="#signup" class="reg-btn">Sign Up</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="cover" id="cover"> 
+            <h1>Community Cleanup Volunteer Registration</h1>
+            <div class="desc">
+                <div class="date"> 
+                    <i class='bx bx-calendar-heart'></i>
+                    <p>March 4, 2024  8:00am</p>
+                </div>
+                <div class="location">
+                    <i class='bx bxs-tree-alt'></i>
+                    <p>Villanueva Plaza</p>
+                </div>
+                
+            </div>
+            <a href="#signup" class="reg-btn">Become A Volunteer</a> 
+        </div>
+
+        <hr>
+
+        <div class="about" id="about">
+            <div class="para">
+                <p>Join us for a community cleanup event aimed at 
+                    beautifying our neighborhood and promoting environmental
+                     awareness. Volunteers will work in teams to pick up litter, 
+                     remove graffiti, and spruce up public spaces. 
+                     <span>All ages and backgrounds </span>are welcome.
+                     Register now to make a positive impact!</p>
+            </div>
+            <div class="slideshow-container"> 
+                <div class="mySlides fade"> 
+                  <img src="./img/d1-1.png" > 
+                </div>
+              
+                <div class="mySlides fade"> 
+                  <img src="./img/d1-2.png" > 
+                </div>
+              
+                <div class="mySlides fade"> 
+                  <img src="./img/d1-4.png" > 
+                </div> 
+
+            </div>
+        </div> 
+        <hr>
+
+        <div class="signup" id="signup">
+            <div class="form-container"> 
+            <h2>Volunteer with Us!</h2>
+                <form action="" method="post">
+                    <div class="fnme">
+                        <label for="name">Fullname</label>
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                    </div>  
+                    <div class="eml">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Your Email Address">
+                    </div>  
+                    <div class="phn">
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="text" placeholder="Your Phone Number">
+                    </div>  
+                    <div class="add">
+                        <label for="address">Address</label>
+                        <input type="text" placeholder="Your Address">              
+                    </div>  
+                    <div class="avl">
+                        <label for="avail">Availability</label>
+                        <select name="avail" id="avail"> 
+                            <option value="audi" autofocus>Select your Availability</option>
+                            <option value="volvo">Weekdays</option>
+                            <option value="saab">Weekends</option>
+                            <option value="mercedes">Anytime</option> 
+                        </select>
+                    </div>
+                    <a  href="#" style="text-align: center; 
+                                width: 200px; 
+                                padding: 6px;
+                                background-color: rgb(44, 218, 28);
+                                justify-self: center;
+                                text-decoration: none;
+                                color: black;"
+                                >Sign Up</a>
+                </form>
+                <p>By clicking "Sign Up", you agree to our Terms and Conditions.</p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="footer">
+        
+    </div>
+</body>
+</html>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every n seconds
+}
+</script>
